@@ -11,6 +11,14 @@ class BaseWidgetIndexState extends State<BaseWidgetIndex> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('基础组件'),
+      ),
+      body: Column(
+        children: <Widget>[
+
+        ],
+      ),
     );
   }
 }

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutterexperiences/base_widget/base_widget_index.dart';
+import 'package:flutterexperiences/custom_widget/custom_widget_index.dart';
 
 class Router{
 
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
-//  static const String Demo1 = 'demo1';
+  static const String BaseWidget_Index = 'BaseWidgetIndex';
+  static const String CustomWidget_Index = 'CustomWidgetIndex';
 //  static const String Main = 'main';
 //  static const String Demo2 = 'demo2';
 //  static const String Path = 'pathpage';
@@ -12,13 +15,17 @@ class Router{
 
 
   static Route generateRoute(RouteSettings settings){
-//    switch (settings.name){
-//      case Demo1:
-//        return MaterialPageRoute(builder: (context){
-//          print('打印参数是${settings.toString()}');
-//          return DemoOne();
-//        });
-//        break;
+    switch (settings.name){
+      case BaseWidget_Index:
+        return MaterialPageRoute(builder: (context){
+          return BaseWidgetIndex();
+        });
+        break;
+      case CustomWidget_Index:
+        return MaterialPageRoute(builder: (context){
+          return CustomWidgetIndex();
+        });
+        break;
 //      case Main:
 //        return MaterialPageRoute(builder: (context){
 //          print('打印参数是${settings.toString()}');
@@ -52,7 +59,7 @@ class Router{
 //          );
 //        });
 //        break;
-//    }
+    }
   }
 }
 

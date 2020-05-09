@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   UtilItem(
                     icon: Icon(Icons.build,color: Colors.lightBlueAccent[400].withOpacity(0.8),),
                     onPressed: (){
-
+                      Navigator.pushNamed(context, Router.BaseWidget_Index);
                     },
                     title: '基础组件',
                     description: 'TextView、TextPainter之类的',
@@ -80,21 +80,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   UtilItem(
                     icon: Icon(Icons.center_focus_weak,color: Colors.lightBlueAccent[400].withOpacity(0.8),),
                     onPressed: (){
-
+                      Navigator.pushNamed(context, Router.CustomWidget_Index);
                     },
                     title: '自定义组件',
                     description: 'CustomPaint、Path之类的',
                   ),
 
-                  UtilItem(
-                    icon: Icon(Icons.center_focus_weak,color: Colors.lightBlueAccent[400].withOpacity(0.8),),
-                    onPressed: (){
-
-                    },
-                    title: '自定义组件',
-                    description: 'CustomPaint、Path之类的',
-                    isShape: true,
-                  ),
+//                  UtilItem(
+//                    icon: Icon(Icons.center_focus_weak,color: Colors.lightBlueAccent[400].withOpacity(0.8),),
+//                    onPressed: (){
+//
+//                    },
+//                    title: '自定义组件',
+//                    description: 'CustomPaint、Path之类的',
+//                    isShape: true,
+//                  ),
 
 
 

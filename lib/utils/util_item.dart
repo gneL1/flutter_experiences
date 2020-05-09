@@ -103,6 +103,7 @@ class UtilItem extends StatelessWidget {
   }
 
 
+  //正常形状
   Widget _head({Widget child}){
     return Container(
         decoration: BoxDecoration(
@@ -125,13 +126,15 @@ class UtilItem extends StatelessWidget {
   }
 
 
+  //自定义形状
   Widget _shapeHead({Widget child}){
     return Padding(
       padding: EdgeInsets.symmetric(
           horizontal: ScreenUtil().setWidth(16),
           vertical: ScreenUtil().setHeight(8)
       ),
-      child: ClipPath(
+      //通过ClipPath来确保child里的水波纹形状同边框形状一致
+     child: ClipPath(
         clipper: ShapeBorderClipper(
             shape: _ItemShape(isClip: true,color: backgroundColor)
         ),
@@ -180,6 +183,8 @@ class _ItemShape extends ShapeBorder{
     return null;
   }
 
+
+  //绘制Item的边框形状
   @override
   Path getOuterPath(Rect rect, {TextDirection textDirection}) {
     // TODO: implement getOuterPath
@@ -221,6 +226,7 @@ class _ItemShape extends ShapeBorder{
     }
   }
 
+  //绘制Item内部图案
   @override
   void paint(Canvas canvas, Rect rect, {TextDirection textDirection}) {
 //    // TODO: implement paint
@@ -243,7 +249,7 @@ class _ItemShape extends ShapeBorder{
         length = rect.width / 8;
       }
 
-//      path.fillType = PathFillType.evenOdd;
+      //画边框
       path.addPolygon([
         Offset(0,length),
         Offset(0,h - length),
@@ -260,6 +266,7 @@ class _ItemShape extends ShapeBorder{
       ], true);
       canvas.drawPath(path, paint);
 
+      //画顶部
       Path pathTop = Path();
       pathTop.addPolygon([
         Offset(rect.width / 3, 0),
@@ -268,6 +275,7 @@ class _ItemShape extends ShapeBorder{
         Offset(rect.width / 3  + length,4.0),
       ], true);
 
+      //设置为填充图案，默认是线框图案
       paint.style = PaintingStyle.fill;
 
       canvas.drawPath(pathTop, paint);
