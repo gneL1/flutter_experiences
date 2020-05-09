@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil.dart';
+import 'package:flutterexperiences/Router.dart';
 import 'package:flutterexperiences/utils/util_item.dart';
+import 'dart:math';
 
 class BaseWidgetIndex extends StatefulWidget {
   BaseWidgetIndex({ Key key }) : super(key: key);
@@ -22,12 +24,39 @@ class BaseWidgetIndexState extends State<BaseWidgetIndex> {
           UtilItem(
             icon: _text(text: 'Tv'),
             onPressed: (){
+              Navigator.pushNamed(context, Router.BaseWidget_TextView);
+            },
+            title: 'TextView',
+            description: '文本组件',
+            isShape: true,
+          ),
+          UtilItem(
+            icon: _text(text: 'Tv'),
+            onPressed: (){
 
             },
             title: 'TextView',
             description: '文本组件',
             isShape: true,
-          )
+          ),
+          UtilItem(
+            icon: _text(text: 'Tv'),
+            onPressed: (){
+
+            },
+            title: 'TextView',
+            description: '文本组件',
+            isShape: true,
+          ),
+          UtilItem(
+            icon: _text(text: 'Tv'),
+            onPressed: (){
+
+            },
+            title: 'TextView',
+            description: '文本组件',
+            isShape: true,
+          ),
 
         ],
       ),

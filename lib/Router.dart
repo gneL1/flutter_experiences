@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterexperiences/base_widget/base_widget_index.dart';
+import 'package:flutterexperiences/base_widget/base_widget_textview.dart';
 import 'package:flutterexperiences/custom_widget/custom_widget_index.dart';
 
 class Router{
@@ -7,11 +8,11 @@ class Router{
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
   static const String BaseWidget_Index = 'BaseWidgetIndex';
+  static const String BaseWidget_TextView = 'BaseWidgetTextView';
+
+
   static const String CustomWidget_Index = 'CustomWidgetIndex';
-//  static const String Main = 'main';
-//  static const String Demo2 = 'demo2';
-//  static const String Path = 'pathpage';
-//  static const String Shape = 'shape';
+
 
 
   static Route generateRoute(RouteSettings settings){
@@ -26,39 +27,12 @@ class Router{
           return CustomWidgetIndex();
         });
         break;
-//      case Main:
-//        return MaterialPageRoute(builder: (context){
-//          print('打印参数是${settings.toString()}');
-//          return MyHomePage(title: '111',);
-//        });
-//        break;
-//      case Demo2:
-//        return MaterialPageRoute(builder: (context){
-//          print('打印参数是${settings.toString()}');
-//          return DemoTwo();
-//        });
-//        break;
-//      case Path:
-//        return MaterialPageRoute(builder: (context){
-//          print('打印参数是${settings.toString()}');
-//          return PathPage();
-//        });
-//        break;
-//      case Shape:
-//        return MaterialPageRoute(builder: (context){
-//          print('打印参数是${settings.toString()}');
-//          return ShapePage();
-//        });
-//        break;
-//      default:
-//        return MaterialPageRoute(builder: (context){
-//          return Scaffold(
-//            body: Center(
-//              child: Text('${settings.name}是一个空页面'),
-//            ),
-//          );
-//        });
-//        break;
+      case BaseWidget_TextView:
+        return MaterialPageRoute(builder: (context){
+          return BaseWidgetTextView();
+        });
+        break;
+
     }
   }
 }
