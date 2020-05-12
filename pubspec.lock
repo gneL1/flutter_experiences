@@ -43,6 +43,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.14.11"
+  color_thief_flutter:
+    dependency: "direct main"
+    description:
+      name: color_thief_flutter
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.2"
   convert:
     dependency: transitive
     description:
@@ -172,6 +179,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.0.5+1"
+  quantize_dart:
+    dependency: transitive
+    description:
+      name: quantize_dart
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.3"
   quiver:
     dependency: transitive
     description:

@@ -26,6 +26,7 @@ dependencies:
   path_provider: ^1.6.5
   flutter_screenutil: ^1.1.0
   provider: ^4.0.5+1
+  color_thief_flutter: ^1.0.2
 
 dev_dependencies:
   flutter_test:

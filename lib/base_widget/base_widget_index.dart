@@ -4,6 +4,8 @@ import 'package:flutterexperiences/Router.dart';
 import 'package:flutterexperiences/utils/util_item.dart';
 import 'dart:math';
 
+import 'package:flutterexperiences/utils/util_text.dart';
+
 class BaseWidgetIndex extends StatefulWidget {
   BaseWidgetIndex({ Key key }) : super(key: key);
 
@@ -22,74 +24,29 @@ class BaseWidgetIndexState extends State<BaseWidgetIndex> {
       body: Column(
         children: <Widget>[
           UtilItem(
-            icon: _text(text: 'Tv'),
+            icon: UtilText.maskShader('Te'),
             onPressed: (){
               Navigator.pushNamed(context, Router.BaseWidget_TextView);
             },
-            title: 'TextView',
+            title: 'Text',
             description: '文本组件',
             isShape: true,
           ),
           UtilItem(
-            icon: _text(text: 'Tv'),
+            icon: UtilText.maskShader('SM'),
             onPressed: (){
-
+              Navigator.pushNamed(context, Router.BaseWidget_ShaderMask);
             },
-            title: 'TextView',
-            description: '文本组件',
+            title: 'ShaderMask',
+            description: '遮罩组件，可以使子组件拥有多种颜色或渐变效果',
             isShape: true,
           ),
-          UtilItem(
-            icon: _text(text: 'Tv'),
-            onPressed: (){
 
-            },
-            title: 'TextView',
-            description: '文本组件',
-            isShape: true,
-          ),
-          UtilItem(
-            icon: _text(text: 'Tv'),
-            onPressed: (){
-
-            },
-            title: 'TextView',
-            description: '文本组件',
-            isShape: true,
-          ),
 
         ],
       ),
     );
   }
 
-  Widget _text({String text}){
-    return ShaderMask(
-      shaderCallback: (Rect bounds){
-        return RadialGradient(
-          center: Alignment.center,
-          radius: 1,
-          tileMode: TileMode.mirror,
-          colors: <Color>[
-            Colors.lightBlueAccent,Colors.lightBlue[300]
-          ],
-        ).createShader(bounds);
-      },
-      child: Text(
-          text,
-          style: TextStyle(
-              color: Colors.white,
-              fontSize: ScreenUtil().setSp(36),
-              fontWeight: FontWeight.w500,
-              shadows: [
-                Shadow(
-                    color: Colors.grey,
-                    offset: Offset(1, 1),
-                    blurRadius: 2
-                )
-              ]
-          )
-      ),
-    );
-  }
+
 }

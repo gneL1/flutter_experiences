@@ -134,26 +134,28 @@ class UtilItem extends StatelessWidget {
           vertical: ScreenUtil().setHeight(8)
       ),
       //通过ClipPath来确保child里的水波纹形状同边框形状一致
-     child: ClipPath(
-        clipper: ShapeBorderClipper(
-            shape: _ItemShape(isClip: true,color: backgroundColor)
-        ),
-        child: Material(
-          color: Colors.lightBlueAccent.withOpacity(0.25),
-          shape: _ItemShape(color: backgroundColor),
+     child: RepaintBoundary(
+       child: ClipPath(
+          clipper: ShapeBorderClipper(
+              shape: _ItemShape(isClip: true,color: backgroundColor)
+          ),
+          child: Material(
+            color: Colors.lightBlueAccent.withOpacity(0.25),
+            shape: _ItemShape(color: backgroundColor),
 
-          child: InkWell(
+            child: InkWell(
 
-            borderRadius: BorderRadius.all(Radius.circular(6)),
+              borderRadius: BorderRadius.all(Radius.circular(6)),
 
-            onTap: onPressed,
-            child: SizedBox(
-              height: ScreenUtil().setHeight(120),
-              child: child,
+              onTap: onPressed,
+              child: SizedBox(
+                height: ScreenUtil().setHeight(120),
+                child: child,
+              ),
             ),
           ),
         ),
-      ),
+     ),
     );
   }
 }
@@ -229,7 +231,8 @@ class _ItemShape extends ShapeBorder{
   //绘制Item内部图案
   @override
   void paint(Canvas canvas, Rect rect, {TextDirection textDirection}) {
-//    // TODO: implement paint
+    print('执行paint');
+    // TODO: implement paint
     if(!isClip){
       Paint paint = Paint()
         ..color = color
@@ -267,8 +270,9 @@ class _ItemShape extends ShapeBorder{
       canvas.drawPath(path, paint);
 
       //画顶部
-      Path pathTop = Path();
-      pathTop.addPolygon([
+//      Path pathTop = Path();
+      path.reset();
+      path.addPolygon([
         Offset(rect.width / 3, 0),
         Offset(rect.width / 3 * 2, 0),
         Offset(rect.width / 3 * 2 - length,4.0),
@@ -278,7 +282,7 @@ class _ItemShape extends ShapeBorder{
       //设置为填充图案，默认是线框图案
       paint.style = PaintingStyle.fill;
 
-      canvas.drawPath(pathTop, paint);
+      canvas.drawPath(path, paint);
     }
 
   }

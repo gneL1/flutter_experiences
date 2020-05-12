@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterexperiences/base_widget/base_widget_index.dart';
+import 'package:flutterexperiences/base_widget/base_widget_shadermask.dart';
 import 'package:flutterexperiences/base_widget/base_widget_textview.dart';
 import 'package:flutterexperiences/custom_widget/custom_widget_index.dart';
 
@@ -9,6 +10,7 @@ class Router{
 
   static const String BaseWidget_Index = 'BaseWidgetIndex';
   static const String BaseWidget_TextView = 'BaseWidgetTextView';
+  static const String BaseWidget_ShaderMask = 'BaseWidgetShaderMask';
 
 
   static const String CustomWidget_Index = 'CustomWidgetIndex';
@@ -30,6 +32,11 @@ class Router{
       case BaseWidget_TextView:
         return MaterialPageRoute(builder: (context){
           return BaseWidgetTextView();
+        });
+        break;
+      case BaseWidget_ShaderMask:
+        return MaterialPageRoute(builder: (context){
+          return BaseWidgetShaderMask();
         });
         break;
 
