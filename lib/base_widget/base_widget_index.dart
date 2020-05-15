@@ -42,6 +42,39 @@ class BaseWidgetIndexState extends State<BaseWidgetIndex> {
             isShape: true,
           ),
 
+          UtilItem(
+            icon: UtilText.maskShader('Gra'),
+            onPressed: (){
+              Navigator.pushNamed(context, Router.BaseWidget_Gradient);
+            },
+            title: 'Gradient',
+            description: '渐变效果',
+            isShape: true,
+          ),
+
+          UtilItem(
+            icon: UtilText.maskShader('DbF'),
+            onPressed: (){
+              Navigator.pushNamed(context, Router.BaseWidget_DropBackFilter);
+            },
+            title: 'DropbackFilter',
+            description: '高斯模糊',
+            isShape: true,
+          ),
+
+
+          UtilItem(
+            icon: UtilText.maskShader('Sd'),
+            onPressed: (){
+              Navigator.pushNamed(context, Router.BaseWidget_Shadow);
+            },
+            title: 'Shadow',
+            description: '阴影效果',
+            isShape: true,
+          ),
+
+
+
 
         ],
       ),

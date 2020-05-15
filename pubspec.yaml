@@ -27,6 +27,10 @@ dependencies:
   flutter_screenutil: ^1.1.0
   provider: ^4.0.5+1
   color_thief_flutter: ^1.0.2
+  flutter_keyboard_visibility:
+    git:
+      url: git://github.com/MisterJimson/flutter_keyboard_visibility.git
+      ref: 3.0.0
 
 dev_dependencies:
   flutter_test:

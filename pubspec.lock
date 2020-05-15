@@ -76,6 +76,15 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_keyboard_visibility:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: "3.0.0"
+      resolved-ref: b448afe40701e1ec37a0569ceb6a87bf93083bd0
+      url: "git://github.com/MisterJimson/flutter_keyboard_visibility.git"
+    source: git
+    version: "3.0.0"
   flutter_screenutil:
     dependency: "direct main"
     description:
@@ -263,4 +272,4 @@ packages:
     version: "3.5.0"
 sdks:
   dart: ">=2.6.0 <3.0.0"
-  flutter: ">=1.12.13+hotfix.5 <2.0.0"
+  flutter: ">=1.12.13+hotfix.6 <2.0.0"

@@ -1,19 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:flutterexperiences/animation_widget/animation_widget_explicit.dart';
+import 'package:flutterexperiences/animation_widget/animation_widget_hero.dart';
+import 'package:flutterexperiences/animation_widget/animation_widget_implicit.dart';
+import 'package:flutterexperiences/animation_widget/animation_widget_index.dart';
+import 'package:flutterexperiences/animation_widget/animation_widget_interval.dart';
+import 'package:flutterexperiences/animation_widget/animation_widget_physics.dart';
+import 'package:flutterexperiences/base_widget/base_widget_backdropfilter.dart';
+import 'package:flutterexperiences/base_widget/base_widget_gradient.dart';
 import 'package:flutterexperiences/base_widget/base_widget_index.dart';
 import 'package:flutterexperiences/base_widget/base_widget_shadermask.dart';
+import 'package:flutterexperiences/base_widget/base_widget_shadow.dart';
 import 'package:flutterexperiences/base_widget/base_widget_textview.dart';
 import 'package:flutterexperiences/custom_widget/custom_widget_index.dart';
+import 'package:flutterexperiences/lock_page/lock_page.dart';
 
 class Router{
 
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
+  static FocusNode focusNode = FocusNode();
+
+  //关闭焦点
+  static void closeFocusNode(){
+    FocusScope.of(navigatorKey.currentContext).requestFocus(focusNode);
+  }
+
   static const String BaseWidget_Index = 'BaseWidgetIndex';
   static const String BaseWidget_TextView = 'BaseWidgetTextView';
   static const String BaseWidget_ShaderMask = 'BaseWidgetShaderMask';
+  static const String BaseWidget_Gradient = 'BaseWidgetGradient';
+  static const String BaseWidget_DropBackFilter = 'BaseWidgetDropBackFilter';
+  static const String BaseWidget_Shadow = 'BaseWidgetShadow';
 
 
   static const String CustomWidget_Index = 'CustomWidgetIndex';
+
+  static const String AnimationWidget_Index = 'AnimationWidgetIndex';
+  static const String AnimationWidget_Implicit = 'AnimationWidgetImplicit';
+  static const String AnimationWidget_Explicit = 'AnimationWidgetExplicit';
+  static const String AnimationWidget_Hero = 'AnimationWidgetHero';
+  static const String AnimationWidget_Interval = 'AnimationWidgetInterval';
+  static const String AnimationWidget_Physics = 'AnimationWidgetPhysics';
+
+
+
+
+  static const String Lock_Page = 'LockPage';
 
 
 
@@ -37,6 +69,63 @@ class Router{
       case BaseWidget_ShaderMask:
         return MaterialPageRoute(builder: (context){
           return BaseWidgetShaderMask();
+        });
+        break;
+      case BaseWidget_Gradient:
+        return MaterialPageRoute(builder: (context){
+          return BaseWidgetGradient();
+        });
+        break;
+      case BaseWidget_DropBackFilter:
+        return MaterialPageRoute(builder: (context){
+          return BaseWidgetDropBackFilter();
+        });
+        break;
+
+      case BaseWidget_Shadow:
+        return MaterialPageRoute(builder: (context){
+          return BaseWidgetShadow();
+        });
+        break;
+
+      case Lock_Page:
+        return MaterialPageRoute(builder: (context){
+          return LockPage();
+        });
+        break;
+      case AnimationWidget_Index:
+        return MaterialPageRoute(builder: (context){
+          return AnimationWidgetIndex();
+        });
+        break;
+
+      case AnimationWidget_Implicit:
+        return MaterialPageRoute(builder: (context){
+          return AnimationWidgetImplicit();
+        });
+        break;
+
+      case AnimationWidget_Explicit:
+        return MaterialPageRoute(builder: (context){
+          return AnimationWidgetExplicit();
+        });
+        break;
+
+      case AnimationWidget_Hero:
+        return MaterialPageRoute(builder: (context){
+          return AnimationWidgetHero();
+        });
+        break;
+
+      case AnimationWidget_Interval:
+        return MaterialPageRoute(builder: (context){
+          return AnimationWidgetInterval();
+        });
+        break;
+
+      case AnimationWidget_Physics:
+        return MaterialPageRoute(builder: (context){
+          return AnimationWidgetPhysics();
         });
         break;
 

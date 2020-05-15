@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutterexperiences/Router.dart';
 import 'package:flutterexperiences/utils/util_functions.dart';
@@ -34,6 +35,10 @@ class MyApp extends StatelessWidget {
       behavior: HitTestBehavior.translucent,
       onPointerDown: (v){
         //触摸收起键盘
+//        FocusScopeNode currentFocus = FocusScope.of(context);
+//        if(!currentFocus.hasPrimaryFocus){
+//          currentFocus.unfocus();
+//        }
 //        FocusScope.of(context).requestFocus(FocusNode());
       },
       child: MaterialApp(
@@ -60,6 +65,21 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   String _warmText = '';
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    //监听键盘的打开和关闭
+    KeyboardVisibility.onChange.listen((visible){
+      if(!visible)Router.closeFocusNode();
+    });
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -97,6 +117,24 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     title: '自定义组件',
                     description: 'CustomPaint、Path之类的',
+                  ),
+
+                  UtilItem(
+                    icon: Icon(Icons.transfer_within_a_station,color: Colors.lightBlueAccent[400].withOpacity(0.8),),
+                    onPressed: (){
+                      Navigator.pushNamed(context, Router.AnimationWidget_Index);
+                    },
+                    title: '动画组件',
+                    description: 'Animation隐式、显示、Hero、交织、物理等动画',
+                  ),
+
+                  UtilItem(
+                    icon: Icon(Icons.center_focus_weak,color: Colors.lightBlueAccent[400].withOpacity(0.8),),
+                    onPressed: (){
+                      Navigator.pushNamed(context, Router.Lock_Page);
+                    },
+                    title: '锁屏',
+                    description: '',
                   ),
 
                   Container(

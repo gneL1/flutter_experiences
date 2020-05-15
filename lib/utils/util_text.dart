@@ -49,6 +49,7 @@ class UtilText extends StatelessWidget{
                     color: Colors.white,
                     fontSize: ScreenUtil().setSp(36),
                     fontWeight: FontWeight.w500,
+                    decoration: TextDecoration.none,
                     shadows: [
                       Shadow(
                           color: Colors.grey,
