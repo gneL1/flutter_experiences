@@ -73,6 +73,17 @@ class BaseWidgetIndexState extends State<BaseWidgetIndex> {
             isShape: true,
           ),
 
+          UtilItem(
+            icon: UtilText.maskShader('Tf'),
+            onPressed: (){
+              Navigator.pushNamed(context, Router.BaseWidget_Transform);
+            },
+            title: 'Transform',
+            description: '变换组件，可以对child做平移、旋转、缩放等操作',
+            isShape: true,
+          ),
+          
+
 
 
 

@@ -11,6 +11,7 @@ import 'package:flutterexperiences/base_widget/base_widget_index.dart';
 import 'package:flutterexperiences/base_widget/base_widget_shadermask.dart';
 import 'package:flutterexperiences/base_widget/base_widget_shadow.dart';
 import 'package:flutterexperiences/base_widget/base_widget_textview.dart';
+import 'package:flutterexperiences/base_widget/base_widget_transform.dart';
 import 'package:flutterexperiences/custom_widget/custom_widget_index.dart';
 import 'package:flutterexperiences/lock_page/lock_page.dart';
 
@@ -31,6 +32,7 @@ class Router{
   static const String BaseWidget_Gradient = 'BaseWidgetGradient';
   static const String BaseWidget_DropBackFilter = 'BaseWidgetDropBackFilter';
   static const String BaseWidget_Shadow = 'BaseWidgetShadow';
+  static const String BaseWidget_Transform = 'BaseWidgetTransform';
 
 
   static const String CustomWidget_Index = 'CustomWidgetIndex';
@@ -87,6 +89,15 @@ class Router{
           return BaseWidgetShadow();
         });
         break;
+
+      case BaseWidget_Transform:
+        return MaterialPageRoute(builder: (context){
+          return BaseWidgetTransform();
+        });
+        break;
+
+
+
 
       case Lock_Page:
         return MaterialPageRoute(builder: (context){

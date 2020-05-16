@@ -231,7 +231,7 @@ class _ItemShape extends ShapeBorder{
   //绘制Item内部图案
   @override
   void paint(Canvas canvas, Rect rect, {TextDirection textDirection}) {
-    print('执行paint');
+//    print('执行paint');
     // TODO: implement paint
     if(!isClip){
       Paint paint = Paint()
